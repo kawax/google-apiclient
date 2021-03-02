@@ -147,7 +147,7 @@ class Client
     public function __call($method, $parameters)
     {
         if (method_exists($this->client, $method)) {
-            return call_user_func_array([$this->client, $method], $parameters);
+            return call_user_func_array([$this->client, $method], array_values($parameters));
         }
 
         throw new \BadMethodCallException(sprintf('Method [%s] does not exist.', $method));

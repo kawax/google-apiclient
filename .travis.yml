@@ -43,7 +43,11 @@ matrix:
       env: LARAVEL='7.*' COMPOSER_FLAGS='--prefer-lowest'
     - php: 7.4
       env: LARAVEL='7.*' COMPOSER_FLAGS='--prefer-stable'
-
+    - php: 8.0
+      env: LARAVEL='8.*' COMPOSER_FLAGS='--prefer-lowest'
+    - php: 8.0
+      env: LARAVEL='8.*' COMPOSER_FLAGS='--prefer-stable'
+      
 before_install:
   - travis_retry composer self-update
   - travis_retry composer require "illuminate/support:${LARAVEL}" --no-update --no-interaction
